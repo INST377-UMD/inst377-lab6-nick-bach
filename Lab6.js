@@ -31,12 +31,8 @@ window.onload = function () {
         fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`)
             .then(response => response.json())
             .then(data => {
-                document.getElementById(localityElementId).textContent = `Locality: ${data.locality || 'Not Found'}`;
+                document.getElementById(localityElementId).textContent = `Locality: ${data.locality}`;
             })
-            .catch(error => {
-                console.error('Error fetching locality data:', error);
-                document.getElementById(localityElementId).textContent = 'Locality: Not Found';
-            });
     }
 
     fetchLocality(lat1, lon1, 'locality1');
