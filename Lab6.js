@@ -32,8 +32,7 @@ window.onload = function () {
             .then(response => response.json())
             .then(data => {
                 document.getElementById(localityElementId).textContent = `Locality: ${data.locality}`;
-            })
-    }
+            })}
 
     fetchLocality(lat1, lon1, 'locality1');
     fetchLocality(lat2, lon2, 'locality2');
